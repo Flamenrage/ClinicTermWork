@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ClinicBusinessLogic.BindingModels
+namespace ClinicBusinessLogic.ViewModels
 {
-    public class PatientBindingModel
+    public class PatientViewModel
     {
         public int Id { get; set; }
 
