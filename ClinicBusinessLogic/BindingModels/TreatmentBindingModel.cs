@@ -16,7 +16,7 @@ namespace ClinicBusinessLogic.BindingModels
 
         public int? TotalPrice { get; set; }
 
-        public bool isReserved { get; set; }
+        public bool IsReserved { get; set; }
 
         public Dictionary<int, (string, int)> TreatmentPrescriptions { get; set; }
     }

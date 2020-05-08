@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ClinicBusinessLogic.Interfaces
 {
-    public interface IPatientService
+    public interface IPatientLogic
     {
         List<PatientViewModel> GetList();
 

@@ -21,7 +21,7 @@ namespace ClinicImplementation.Models
         public int TotalPrice { get; set; }
 
         [Required]
-        public bool isReserved { get; set; }
+        public bool IsReserved { get; set; }
 
         public virtual Patient Patient { get; set; }
 
