@@ -20,7 +20,7 @@ namespace ClinicBusinessLogic.ViewModels
         public int? TotalPrice { get; set; }
 
         [DisplayName("Забронировано")]
-        public bool isReserved { get; set; }
+        public bool IsReserved { get; set; }
 
         public Dictionary<int, (string, int)> TreatmentPrescriptions { get; set; }
     }
