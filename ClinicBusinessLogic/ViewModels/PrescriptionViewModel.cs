@@ -12,6 +12,6 @@ namespace ClinicBusinessLogic.ViewModels
         public string Name { get; set; }
         [DisplayName("Стоимость")]
         public int? TotalPrice { get; set; }
-        public Dictionary<int, (string, int)> PrescriptionMedications { get; set; }
+        public List<PrescriptionMedicationViewModel> PrescriptionMedications { get; set; }
     }
 }
