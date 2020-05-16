@@ -22,6 +22,6 @@ namespace ClinicBusinessLogic.ViewModels
         [DisplayName("Забронировано")]
         public bool IsReserved { get; set; }
 
-        public Dictionary<int, (string, int)> TreatmentPrescriptions { get; set; }
+        public List<TreatmentPrescriptionViewModel> TreatmentPrescriptions { get; set; }
     }
 }
