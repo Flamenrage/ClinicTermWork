@@ -12,6 +12,6 @@ namespace ClinicBusinessLogic.ViewModels
         public string Name { get; set; }
         [DisplayName("Дата создания")]
         public DateTime Date { get; set; }
-        public Dictionary<int, (string, int)> RequestMedications { get; set; }
+        public List<RequestMedicationViewModel> RequestMedications { get; set; }
     }
 }
