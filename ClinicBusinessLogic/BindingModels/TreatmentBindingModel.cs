@@ -18,6 +18,6 @@ namespace ClinicBusinessLogic.BindingModels
 
         public bool IsReserved { get; set; }
 
-        public Dictionary<int, (string, int)> TreatmentPrescriptions { get; set; }
+        public List<TreatmentPrescriptionBindingModel> TreatmentPrescriptions { get; set; }
     }
 }

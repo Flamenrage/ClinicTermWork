@@ -13,8 +13,5 @@ namespace ClinicBusinessLogic.BindingModels
         public string Email { get; set; }
 
         public string Password { get; set; }
-
-        public Dictionary<int, (string, int)> Treatments { get; set; }
-
     }
 }

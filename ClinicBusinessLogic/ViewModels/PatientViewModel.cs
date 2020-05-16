@@ -20,7 +20,5 @@ namespace ClinicBusinessLogic.ViewModels
         [DisplayName("Пароль")]
 
         public string Password { get; set; }
-
-        public Dictionary<int, (string, int)> Treatments { get; set; }
     }
 }

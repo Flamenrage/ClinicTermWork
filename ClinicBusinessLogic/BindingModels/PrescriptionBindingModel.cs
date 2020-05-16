@@ -9,6 +9,6 @@ namespace ClinicBusinessLogic.BindingModels
         public int? Id { get; set; }
         public string Name { get; set; }
         public int? TotalPrice { get; set; }
-        public Dictionary<int, (string, int)> PrescriptionMedications { get; set; }
+        public List<PrescriptionMedicationBindingModel> PrescriptionMedications { get; set; }
     }
 }
