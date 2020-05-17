@@ -13,10 +13,8 @@ namespace ClinicImplementation.Models
         public int TreatmentId { get; set; }
 
         public int PrescriptionId { get; set; }
-        [Required]
         public string PrescriptionName { get; set; }
 
-        [Required]
         public int Count { get; set; }
 
         public virtual Treatment Treatment { get; set; }

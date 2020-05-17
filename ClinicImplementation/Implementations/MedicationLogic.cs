@@ -103,10 +103,10 @@ namespace ClinicImplementation.Implementations
                             {
                                 FIO = context.Patients.FirstOrDefault(rec => rec.Id == tr.PatientId).FIO,
                                 Name = tr.Name,
-                                Date = tr.Date.ToShortDateString(),
+                                Date = tr.Date,
                                 MedicationName = med.MedicationName,
                                 // рассчитываем нужное кол-во лекарств
-                                MedicationCount = med.Count * tPres.Count
+                                Count = med.Count * tPres.Count
                             });
                         }
                     }
@@ -117,7 +117,7 @@ namespace ClinicImplementation.Implementations
                                         .Select(rec => new
                                         {
                                             MedicationName = rec.Key,
-                                            Count = rec.Sum(r => r.MedicationCount)
+                                            Count = rec.Sum(r => r.Count)
                                         })
                                         .OrderByDescending(rec => rec.Count)
                                         .ToList();
