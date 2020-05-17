@@ -19,5 +19,6 @@ namespace ClinicBusinessLogic.Interfaces
         void SaveTreatments(ReportBindingModel model, int PatientId);
 
         void SaveToExcel(ReportBindingModel model, int PatientId);
+        void SaveToWord(ReportBindingModel model, int PatientId);
     }
 }
