@@ -123,7 +123,7 @@ namespace ClinicImplementation.Implementations
             }
         }
 
-        public void SaveReport(ReportBindingModel model, int PatientId)
+        public void SaveReport(ReportBindingModel model)
         {
             using (var context = new DatabaseContext())
             {
@@ -395,6 +395,7 @@ namespace ClinicImplementation.Implementations
                     paragraph.Format.SpaceAfter = 18;
                     paragraph.Range.InsertParagraphAfter();
                     // таблица 
+
                     // нам нужно сразу знать, сколько строк потребуется
                     List<ReportViewModel> list = null;
                     if (patientId == -1)
@@ -407,6 +408,8 @@ namespace ClinicImplementation.Implementations
                     }
                     var table = doc.Tables.Add(doc.Bookmarks.get_Item("\\endofdoc").Range,
                         list.Count + 1, 5, Type.Missing, WdAutoFitBehavior.wdAutoFitContent);
+                    table.Range.Font.Size = 14;
+                    table.Range.Font.Bold = 0;
                     table.AllowAutoFit = true;
                     table.Borders.Enable = 1;
                     table.Cell(1, 1).Range.Text = "Название";

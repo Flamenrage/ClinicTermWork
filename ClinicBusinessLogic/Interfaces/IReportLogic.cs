@@ -14,7 +14,7 @@ namespace ClinicBusinessLogic.Interfaces
 
         List<ReportViewModel> GetTreatments(ReportBindingModel model, int PatientId);
 
-        void SaveReport(ReportBindingModel model, int PatientId);
+        void SaveReport(ReportBindingModel model);
 
         void SaveTreatments(ReportBindingModel model, int PatientId);
 

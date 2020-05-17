@@ -1,4 +1,6 @@
-﻿using ClinicImplementation;
+﻿using ClinicBusinessLogic.BindingModels;
+using ClinicImplementation;
+using ClinicImplementation.Implementations;
 using ClinicImplementation.Models;
 using System;
 using System.Collections.Generic;
@@ -19,8 +21,8 @@ namespace ClinicAdministrationView
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            DatabaseContext context = new DatabaseContext();
-            context.Patients.Add(new Patient
+           // DatabaseContext context = new DatabaseContext();
+            /*context.Patients.Add(new Patient
             {
                 FIO = "sakljasf",
                 Email = "oipoip",
@@ -28,8 +30,15 @@ namespace ClinicAdministrationView
             });
             context.SaveChanges();
             var query = context.Patients.First();
-            Debug.WriteLine(query.Password.ToString());
-            Application.Run(new Form1());
+            Debug.WriteLine(query.Password.ToString());*/
+               Application.Run(new Form1());
+           /* ReportLogic logic = new ReportLogic();
+            logic.SaveToWord(new ReportBindingModel
+            {
+                FileName = "Name.doc",
+                DateFrom = DateTime.Now,
+                DateTo = DateTime.Now
+            }, -1);*/
         }
     }
 }
