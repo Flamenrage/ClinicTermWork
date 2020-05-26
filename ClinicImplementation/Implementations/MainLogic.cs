@@ -114,25 +114,25 @@ namespace ClinicImplementation.Implementations
             using (var context = new DatabaseContext())
             {
                 List<TreatmentViewModel> result = context.Treatments.Select(rec =>
-           new TreatmentViewModel
-           {
-               Id = rec.Id,
-               Date = rec.Date,
-               PatientId = rec.PatientId,
-               Name = rec.Name,
-               TotalPrice = rec.TotalPrice,
-               IsReserved = rec.IsReserved,
-               TreatmentPrescriptions = context.TreatmentPrescriptions
-                   .Where(recPC => recPC.TreatmentId == rec.Id)
-                   .Select(recPC => new TreatmentPrescriptionViewModel
-                   {
-                       Id = recPC.Id,
-                       TreatmentId = recPC.TreatmentId,
-                       PrescriptionId = recPC.PrescriptionId,
-                       PrescriptionName = recPC.Prescription.Name,
-                       Count = recPC.Count,
-                   }).ToList()
-           }).ToList();
+                new TreatmentViewModel
+                {
+                    Id = rec.Id,
+                    Date = rec.Date,
+                    PatientId = rec.PatientId,
+                    Name = rec.Name,
+                    TotalPrice = rec.TotalPrice,
+                    IsReserved = rec.IsReserved,
+                    TreatmentPrescriptions = context.TreatmentPrescriptions
+                        .Where(recPC => recPC.TreatmentId == rec.Id)
+                        .Select(recPC => new TreatmentPrescriptionViewModel
+                        {
+                            Id = recPC.Id,
+                            TreatmentId = recPC.TreatmentId,
+                            PrescriptionId = recPC.PrescriptionId,
+                            PrescriptionName = recPC.Prescription.Name,
+                            Count = recPC.Count,
+                        }).ToList()
+                }).ToList();
                 return result;
             }
         }

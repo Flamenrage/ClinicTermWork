@@ -11,7 +11,6 @@ namespace ClinicImplementation.Models
         public int MedicationId { get; set; }
         public int PrescriptionId { get; set; }
         public string MedicationName { get; set; }
-
         [Required]
         public int Count { get; set; }
         public virtual Medication Medication { get; set; }

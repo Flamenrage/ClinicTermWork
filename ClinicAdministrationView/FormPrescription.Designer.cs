@@ -172,6 +172,7 @@
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.labelName);
             this.Name = "FormPrescription";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Рецепт";
             this.Load += new System.EventHandler(this.FormPrescription_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();

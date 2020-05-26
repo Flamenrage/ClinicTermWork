@@ -13,7 +13,7 @@ namespace ClinicImplementation.Models
         public string MedicationName { get; set; }
         [Required]
         public int Count { get; set; }
-        public virtual Request Request { get; set; }
         public virtual Medication Medication { get; set; }
+        public virtual Request Request { get; set; }        
     }
 }

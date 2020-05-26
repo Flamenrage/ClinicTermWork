@@ -14,5 +14,7 @@ namespace ClinicImplementation.Models
         public int? TotalPrice { get; set; }
         [ForeignKey("PrescriptionId")]
         public virtual List<MedicationPrescription> MedicationPrescriptions { get; set; }
+        [ForeignKey("PrescriptionId")]
+        public virtual List<TreatmentPrescription> TreatmentPrescriptions { get; set; }
     }
 }

@@ -10,9 +10,9 @@ namespace ClinicImplementation.Models
     {
         public int Id { get; set; }
         [Required]
-        public DateTime Date { get; set; }
-        [Required]
         public string Name { get; set; }
+        [Required]
+        public DateTime Date { get; set; }        
         [ForeignKey("RequestId")]
         public virtual List<RequestMedication> RequestMedications { get; set; }
     }

@@ -32,7 +32,7 @@ namespace ClinicAdministrationView
             if (textBoxPass.Text == "123")
             {
                 var form = Container.Resolve<FormMain>();
-                this.Hide();
+                Hide();
                 form.Show();
             }
             else
