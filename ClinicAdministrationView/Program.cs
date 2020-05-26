@@ -31,7 +31,7 @@ namespace ClinicAdministrationView
             context.SaveChanges();
             var query = context.Patients.First();
             Debug.WriteLine(query.Password.ToString());*/
-               Application.Run(new Form1());
+               Application.Run(new FormAuthorization());
            /* ReportLogic logic = new ReportLogic();
             logic.SaveToWord(new ReportBindingModel
             {
