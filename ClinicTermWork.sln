@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicImplementation", "Cli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicAdministrationView", "ClinicAdministrationView\ClinicAdministrationView.csproj", "{49E0B1E3-80A7-455F-9940-43DF3B518C8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicClientView", "ClinicClientView\ClinicClientView.csproj", "{B1B0E9E1-9BA9-4D88-9417-D7B1FBF560D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{49E0B1E3-80A7-455F-9940-43DF3B518C8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49E0B1E3-80A7-455F-9940-43DF3B518C8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49E0B1E3-80A7-455F-9940-43DF3B518C8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1B0E9E1-9BA9-4D88-9417-D7B1FBF560D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1B0E9E1-9BA9-4D88-9417-D7B1FBF560D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1B0E9E1-9BA9-4D88-9417-D7B1FBF560D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1B0E9E1-9BA9-4D88-9417-D7B1FBF560D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
