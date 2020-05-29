@@ -8,7 +8,8 @@ using ClinicBusinessLogic.Interfaces;
 using ClinicImplementation;
 using ClinicImplementation.Implementations;
 using Unity.Lifetime;
-using System.Data.Entity;
+//using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClinicClientView.App_Start
 {
