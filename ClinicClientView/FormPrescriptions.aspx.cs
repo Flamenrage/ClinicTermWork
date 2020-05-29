@@ -3,6 +3,7 @@ using ClinicBusinessLogic.ViewModels;
 using ClinicImplementation.Implementations;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -22,9 +23,17 @@ namespace ClinicClientView
         }
         private void LoadData()
         {
+            list = service.GetAvailableList();
             try
             {
-                list = service.GetAvailableList();
+                if (list != null)
+                {  
+                    dataGridView.DataBind();
+                    dataGridView.DataSource = list;
+                    dataGridView.DataBind();
+                    dataGridView.ShowHeaderWhenEmpty = true;
+                    dataGridView.SelectedRowStyle.BackColor = Color.Silver;
+                }
             }
             catch (Exception ex)
             {

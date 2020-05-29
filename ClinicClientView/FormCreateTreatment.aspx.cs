@@ -284,6 +284,11 @@ namespace ClinicClientView
             e.Row.Cells[1].Visible = false;
             e.Row.Cells[2].Visible = false;
             e.Row.Cells[3].Visible = false;
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[4].Text = "Название";
+                e.Row.Cells[5].Text = "Количество";
+            }
         }
 
         private void CalcSum()

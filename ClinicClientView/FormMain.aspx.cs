@@ -75,19 +75,36 @@ namespace ClinicClientView
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('" + ex.Message + "');</script>");
             }
         }
-
-        protected void ButtonToExcel_Click(object sender, EventArgs e)
+        protected void ButtonReserve_Click(object sender, EventArgs e)
         {
             try
             {
                 DateTime date = logic.TreatmentReservation(list[dataGridView.SelectedIndex].Id);
-                string path = @"C:\temp\PatientTreatment.xls";
-                logicR.SaveToExcel(new ReportBindingModel
+                string name;
+                if (!string.IsNullOrEmpty(textBoxReport.Text)) 
                 {
-                    FileName = path,
-                    DateFrom = date,
-                    DateTo = date.AddMilliseconds(100)
-                }, Convert.ToInt32(Session["PatientId"]));
+                    name = textBoxReport.Text;
+                    if (name == "xls")
+                    {
+                        string path = @"C:\temp\PatientTreatment.xls";
+                        logicR.SaveToExcel(new ReportBindingModel
+                        {
+                            FileName = path,
+                            DateFrom = date,
+                            DateTo = date.AddMilliseconds(100)
+                        }, Convert.ToInt32(Session["PatientId"]));
+                    }
+                    else if (name == "doc")
+                    {
+                        string path = @"C:\temp\PatientTreatment.doc";
+                        logicR.SaveToWord(new ReportBindingModel
+                        {
+                            FileName = path,
+                            DateFrom = date,
+                            DateTo = date.AddMilliseconds(100)
+                        }, Convert.ToInt32(Session["PatientId"]));
+                    }
+                }
                 LoadData();
                 Response.Redirect("FormMain.aspx");
             }
@@ -96,27 +113,6 @@ namespace ClinicClientView
                 Page.ClientScript.RegisterStartupScript(GetType(), "Scripts", "<script>alert('" + ex.Message + "');</script>");
             }
         }
-        protected void ButtonToWord_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DateTime date = logic.TreatmentReservation(list[dataGridView.SelectedIndex].Id);
-                string path = @"C:\temp\PatientTreatment.doc";
-                logicR.SaveToWord(new ReportBindingModel
-                {
-                    FileName = path,
-                    DateFrom = date,
-                    DateTo = date.AddMilliseconds(100)
-                }, Convert.ToInt32(Session["PatientId"]));
-                LoadData();
-                Response.Redirect("FormMain.aspx");
-            }
-            catch (Exception ex)
-            {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('" + ex.Message + "');</script>");
-            }
-        }
-
         protected void ButtonRef_Click(object sender, EventArgs e)
         {
             LoadData();

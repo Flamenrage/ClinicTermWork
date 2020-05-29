@@ -33,6 +33,33 @@ namespace ClinicClientView
         protected global::System.Web.UI.WebControls.Menu Menu;
 
         /// <summary>
+        /// LabelName элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelName;
+
+        /// <summary>
+        /// ButtonReserve элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonReserve;
+
+        /// <summary>
+        /// textBoxReport элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxReport;
+
+        /// <summary>
         /// ButtonCreateTreatment элемент управления.
         /// </summary>
         /// <remarks>
@@ -49,24 +76,6 @@ namespace ClinicClientView
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonReviewTreatment;
-
-        /// <summary>
-        /// ButtonToExcel элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonToExcel;
-
-        /// <summary>
-        /// ButtonToWord элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonToWord;
 
         /// <summary>
         /// ButtonRef элемент управления.

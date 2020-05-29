@@ -8,8 +8,8 @@
     <title></title>
     <style type="text/css">
         #form1 {
-            height: 666px;
-            width: 1067px;
+            height: 595px;
+            width: 1155px;
         }
     </style>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -22,12 +22,13 @@
                 <asp:MenuItem Text="Отчеты" Value="Отчеты" NavigateUrl="~/FormPatientTreatments.aspx"></asp:MenuItem>
             </Items>
         </asp:Menu>
+        <asp:Label ID="LabelName" runat="server" Text="Введите формат: doc или xls" style="text-align: center"></asp:Label>
         <br />
+        <asp:Button ID="ButtonReserve" runat="server" OnClick="ButtonReserve_Click" Text="Резерв лечения" Width="161px" />
+        <asp:TextBox ID="textBoxReport" runat="server" Width="79px"></asp:TextBox>
         <asp:Button ID="ButtonCreateTreatment" runat="server" Text="Выбрать лечение" OnClick="ButtonCreateTreatment_Click" />
         <asp:Button ID="ButtonReviewTreatment" runat="server" Text="Просмотреть лечение" OnClick="ButtonReviewTreatment_Click" />
-        <asp:Button ID="ButtonToExcel" runat="server" Text="Резерв в excel" OnClick="ButtonToExcel_Click" />
-        <asp:Button ID="ButtonToWord" runat="server" OnClick="ButtonToWord_Click" Text="Резерв в word" />
-        <asp:Button ID="ButtonRef" runat="server" Text="Обновить список" OnClick="ButtonRef_Click" />
+        <asp:Button ID="ButtonRef" runat="server" Text="Обновить список" OnClick="ButtonRef_Click" Width="177px" />
         <asp:GridView ID="dataGridView" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True">
             <Columns>
                 <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />

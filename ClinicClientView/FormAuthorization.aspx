@@ -12,14 +12,14 @@
         <div style="height: 241px">
 
             <br />
-            ФИО&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox ID="textBoxFIO" runat="server" Height="16px" Width="276px" style="margin-bottom: 0px"></asp:TextBox>
+            ФИО&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox ID="textBoxFIO" runat="server" Height="16px" Width="276px" style="margin-bottom: 0px">ФИО</asp:TextBox>
             &nbsp;<br />
             <br />
-            Почта&nbsp;&nbsp;&nbsp; <asp:TextBox ID="textBoxEmail" runat="server" Height="16px" Width="280px"></asp:TextBox>
+            Почта&nbsp;&nbsp;&nbsp; <asp:TextBox ID="textBoxEmail" runat="server" Height="16px" Width="280px">123@mail.ru</asp:TextBox>
             <br />
             <br />
             Пароль&nbsp;
-        <asp:TextBox ID="textBoxPassword" runat="server" Height="16px" Width="280px"></asp:TextBox>
+        <asp:TextBox ID="textBoxPassword" runat="server" Height="16px" Width="280px">123</asp:TextBox>
             <br />
             <br />
             <asp:Button ID="RegistrationButton" runat="server" OnClick="RegistrationButton_Click" Text="Зарегистрироваться" />
