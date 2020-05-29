@@ -8,6 +8,7 @@ namespace ClinicImplementation
 {
     public class DatabaseContext : DbContext
     {
+        public DatabaseContext() { } // ВРЕМЕННО
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (optionsBuilder.IsConfigured == false)

@@ -25,17 +25,17 @@
         <br />
         <asp:Button ID="ButtonCreateTreatment" runat="server" Text="Выбрать лечение" OnClick="ButtonCreateTreatment_Click" />
         <asp:Button ID="ButtonReviewTreatment" runat="server" Text="Просмотреть лечение" OnClick="ButtonReviewTreatment_Click" />
-        <asp:Button ID="ButtonToExcel" runat="server" Text="Резерв в excel" OnClick="ButtonTreatmentReservation_Click" />
+        <asp:Button ID="ButtonToExcel" runat="server" Text="Резерв в excel" OnClick="ButtonToExcel_Click" />
         <asp:Button ID="ButtonToWord" runat="server" OnClick="ButtonToWord_Click" Text="Резерв в word" />
         <asp:Button ID="ButtonRef" runat="server" Text="Обновить список" OnClick="ButtonRef_Click" />
         <asp:GridView ID="dataGridView" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True">
             <Columns>
                 <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
                 <asp:CommandField ShowSelectButton="true" SelectText=">>" />
-                <asp:BoundField DataField="Title" HeaderText="Наименование" SortExpression="Title" />
+                <asp:BoundField DataField="Name" HeaderText="Наименование" SortExpression="Name" />
                 <asp:BoundField DataField="Date" HeaderText="Дата" SortExpression="Date" />
-                <asp:BoundField DataField="TotalCost" HeaderText="Стоимость" SortExpression="TotalCost" />
-                <asp:BoundField DataField="isReserved" HeaderText="Бронь" SortExpression="isReserved" />
+                <asp:BoundField DataField="TotalPrice" HeaderText="Стоимость" SortExpression="TotalPrice" />
+                <asp:BoundField DataField="IsReserved" HeaderText="Бронь" SortExpression="IsReserved" />
             </Columns>
             <SelectedRowStyle BackColor="#CCCCCC" />
         </asp:GridView>

@@ -14,11 +14,11 @@ namespace ClinicClientView
 {
     public partial class FormAuthorization : System.Web.UI.Page
     {
-        private readonly IPatientLogic logic = new PatientLogic();
+        private IPatientLogic logic = new PatientLogic();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            logic = new PatientLogic();
         }
 
         protected void RegistrationButton_Click(object sender, EventArgs e)

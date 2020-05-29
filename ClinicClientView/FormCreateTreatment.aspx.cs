@@ -64,7 +64,7 @@ namespace ClinicClientView
                         Id = (int)Session["SEId"],
                         TreatmentId = (int)Session["SETreatmentId"],
                         PrescriptionId = (int)Session["SEPrescriptionId"],
-                        PrescriptionName = (string)Session["SEPrescriptionTitle"],
+                        PrescriptionName = (string)Session["SEPrescriptionName"],
                         Count = (int)Session["SECount"]
                     };
                     this.TreatmentPrescriptions[(int)Session["SEIs"]] = model;
@@ -76,7 +76,7 @@ namespace ClinicClientView
                     {
                         TreatmentId = (int)Session["SETreatmentId"],
                         PrescriptionId = (int)Session["SEPrescriptionId"],
-                        PrescriptionName = (string)Session["SEPrescriptionTitle"],
+                        PrescriptionName = (string)Session["SEPrescriptionName"],
                         Count = (int)Session["SECount"]
                     };
                     this.TreatmentPrescriptions.Add(model);
@@ -84,13 +84,13 @@ namespace ClinicClientView
                 Session["SEId"] = null;
                 Session["SETreatmentId"] = null;
                 Session["SEPrescriptionId"] = null;
-                Session["SEPrescriptionTitle"] = null;
+                Session["SEPrescriptionName"] = null;
                 Session["SEIsReserved"] = null;
                 Session["SECount"] = null;
                 Session["SEIs"] = null;
             }
             List<TreatmentPrescriptionBindingModel> TreatmentPrescriptionBM = new List<TreatmentPrescriptionBindingModel>();
-            for (int i = 0; i < this.TreatmentPrescriptions.Count; ++i)
+            for (int i = 0; i < TreatmentPrescriptions.Count; ++i)
             {
                 TreatmentPrescriptionBM.Add(new TreatmentPrescriptionBindingModel
                 {
@@ -173,7 +173,7 @@ namespace ClinicClientView
                 Session["SEId"] = model.Id;
                 Session["SETreatmentId"] = model.TreatmentId;
                 Session["SEPrescriptionId"] = model.PrescriptionId;
-                Session["SEPrescriptionTitle"] = model.PrescriptionName;
+                Session["SEPrescriptionName"] = model.PrescriptionName;
                 Session["SEIsReserved"] = logic.GetTreatment(id).IsReserved;
                 Session["SECount"] = model.Count;
                 Session["SEIs"] = dataGridView.SelectedIndex;
