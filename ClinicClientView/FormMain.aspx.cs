@@ -93,7 +93,7 @@ namespace ClinicClientView
             }
             catch (Exception ex)
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('" + ex.Message + "');</script>");
+                Page.ClientScript.RegisterStartupScript(GetType(), "Scripts", "<script>alert('" + ex.Message + "');</script>");
             }
         }
         protected void ButtonToWord_Click(object sender, EventArgs e)
