@@ -248,20 +248,18 @@ namespace ClinicImplementation.Implementations
                 {
                     if (File.Exists(model.FileName))
                     {
-                        excel.Workbooks.Open(model.FileName, Type.Missing, Type.Missing, Type.Missing,
-                            Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                            Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                            Type.Missing);
+                        File.Delete(model.FileName);                        
                     }
-                    else
-                    {
-                        excel.SheetsInNewWorkbook = 1;
-                        excel.Workbooks.Add(Type.Missing);
-                        excel.Workbooks[1].SaveAs(model.FileName, XlFileFormat.xlExcel8, Type.Missing,
-                            Type.Missing, false, false, XlSaveAsAccessMode.xlNoChange, Type.Missing,
-                            Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-                    }
-
+                    File.Create(model.FileName);
+                    excel.Workbooks.Open(model.FileName, Type.Missing, Type.Missing, Type.Missing,
+                        Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                        Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                        Type.Missing);                    
+                    excel.SheetsInNewWorkbook = 1;
+                    excel.Workbooks.Add(Type.Missing);
+                    excel.Workbooks[1].SaveAs(model.FileName, XlFileFormat.xlExcel8, Type.Missing,
+                        Type.Missing, false, false, XlSaveAsAccessMode.xlNoChange, Type.Missing,
+                        Type.Missing, Type.Missing, Type.Missing, Type.Missing);                    
                     Sheets excelsheets = excel.Workbooks[1].Worksheets;
                     var excelworksheet = (Worksheet)excelsheets.get_Item(1);
                     excelworksheet.Cells.Clear();

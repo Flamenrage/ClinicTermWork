@@ -19,7 +19,7 @@ namespace ClinicClientView
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            reportObject.Visible = false;
         }
 
         protected void ButtonMake_Click(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace ClinicClientView
                 return;
             }
             try
-            {
+            {                
                 ReportParameter parameter = new ReportParameter("ReportParameterPeriod",
                                             "c " + Calendar1.SelectedDate.ToShortDateString() +
                                             " по " + Calendar2.SelectedDate.ToShortDateString());
@@ -46,18 +46,18 @@ namespace ClinicClientView
                 ReportViewer.LocalReport.DataSources.Add(source);
                 ReportViewer.DataBind();
 
-                string path = @"C:\temp\Treatments.pdf";
+                string path = "Treatments.pdf";
                 logicR.SaveTreatments(new ReportBindingModel
                 {
                     FileName = path,
                     DateFrom = Calendar1.SelectedDate,
                     DateTo = Calendar2.SelectedDate
                 }, Convert.ToInt32(Session["PatientId"]));
-                
+                reportObject.Visible = true;
             }
             catch (Exception ex)
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ScriptAllert", "<script>alert('" + ex.Message + "');</script>");
+                Page.ClientScript.RegisterStartupScript(GetType(), "ScriptAllert", "<script>alert('" + ex.Message + "');</script>");
             }
         }
 
