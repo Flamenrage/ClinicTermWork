@@ -38,13 +38,6 @@
             <asp:Button ID="ButtonCancel" runat="server" OnClick="ButtonCancel_Click" Text="Вернуться" Width="196px" />
             <asp:ScriptManager ID="ScriptManager1" runat="server">
             </asp:ScriptManager>
-            <rsweb:ReportViewer ID="ReportViewer" runat="server" Font-Names="Verdana" Font-Size="8pt" Width="930px" >
-                <LocalReport ReportPath="Report.rdlc">
-                    <DataSources>
-                        <rsweb:ReportDataSource Name="DataSet" />
-                    </DataSources>
-                </LocalReport>
-            </rsweb:ReportViewer>
             <br />
             <div id ='reportObject' runat = "server">
                 <object type="application/pdf" data="Treatments.pdf" width="1300" height="600"></object>

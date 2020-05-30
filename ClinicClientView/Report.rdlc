@@ -93,14 +93,16 @@
                     <Style />
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>ReportParameterPeriod</rd:DefaultName>
             <Top>1.47849cm</Top>
-            <Left>11.8237cm</Left>
+            <Left>9.11437cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
+            <Width>7.7487cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -466,8 +468,8 @@
             <DataSetName>DataSet</DataSetName>
             <Top>3.09245cm</Top>
             <Left>1.42875cm</Left>
-            <Height>1.33229cm</Height>
-            <Width>25.22328cm</Width>
+            <Height>1.3323cm</Height>
+            <Width>25.22327cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace ClinicClientView
@@ -26,26 +27,11 @@ namespace ClinicClientView
         {
             if (Calendar1.SelectedDate >= Calendar2.SelectedDate)
             {
-                Page.ClientScript.RegisterStartupScript(GetType(), "ScriptAllertDate", "<script>alert('Дата начала должна быть меньше даты окончания');</script>");
+                Page.ClientScript.RegisterStartupScript(GetType(), "ScriptAlertDate", "<script>alert('Дата начала должна быть меньше даты окончания');</script>");
                 return;
             }
             try
             {                
-                ReportParameter parameter = new ReportParameter("ReportParameterPeriod",
-                                            "c " + Calendar1.SelectedDate.ToShortDateString() +
-                                            " по " + Calendar2.SelectedDate.ToShortDateString());
-                ReportViewer.LocalReport.SetParameters(parameter);
-
-                var dataSource = logicR.GetTreatments(new ReportBindingModel
-                {
-                    DateFrom = Calendar1.SelectedDate,
-                    DateTo = Calendar2.SelectedDate
-                }, Convert.ToInt32(Session["PatientId"]));
-
-                ReportDataSource source = new ReportDataSource("DataSet", dataSource);
-                ReportViewer.LocalReport.DataSources.Add(source);
-                ReportViewer.DataBind();
-
                 string path = "Treatments.pdf";
                 logicR.SaveTreatments(new ReportBindingModel
                 {
@@ -53,11 +39,12 @@ namespace ClinicClientView
                     DateFrom = Calendar1.SelectedDate,
                     DateTo = Calendar2.SelectedDate
                 }, Convert.ToInt32(Session["PatientId"]));
+                Page.ClientScript.RegisterStartupScript(GetType(), "ScriptUpdate",  @"<script language = ""javascript"" type = ""text/javascript"" > getElementById('reportObject').contentDocument.location.reload() </ script >");
                 reportObject.Visible = true;
             }
             catch (Exception ex)
             {
-                Page.ClientScript.RegisterStartupScript(GetType(), "ScriptAllert", "<script>alert('" + ex.Message + "');</script>");
+                Page.ClientScript.RegisterStartupScript(GetType(), "ScriptAlert", "<script>alert('" + ex.Message + "');</script>");
             }
         }
 

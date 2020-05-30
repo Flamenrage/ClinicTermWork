@@ -38,8 +38,15 @@ namespace ClinicAdministrationView
                 FileName = "",
                 DateFrom = dateTimePickerFrom.Value,
                 DateTo = dateTimePickerTo.Value
+            })
+            .Select(rec => new
+            {
+                FIO = rec.FIO,
+                MedicationName = rec.MedicationName,
+                Count = rec.Count,
+                Name = rec.Name,
+                Date = (rec.Date == DateTime.MinValue) ? " " : rec.Date.ToString("dd/MM/yyyy HH:mm")
             });
-
             ReportParameter parameter = new ReportParameter("ReportParameterPeriod",
                 "c " + dateTimePickerFrom.Value.ToShortDateString() +
                 " по " + dateTimePickerTo.Value.ToShortDateString());

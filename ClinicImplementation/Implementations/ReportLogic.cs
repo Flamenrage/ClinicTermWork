@@ -209,7 +209,7 @@ namespace ClinicImplementation.Implementations
                             }
                             else
                             {
-                                cell = new PdfPCell(new Phrase(el.Date.ToShortDateString(), fontForCells));
+                                cell = new PdfPCell(new Phrase(el.Date.ToString("dd/MM/yyyy HH:mm"), fontForCells));
                             }
                             table.AddCell(cell);
 
@@ -250,16 +250,16 @@ namespace ClinicImplementation.Implementations
                     {
                         File.Delete(model.FileName);                        
                     }
-                    File.Create(model.FileName);
-                    excel.Workbooks.Open(model.FileName, Type.Missing, Type.Missing, Type.Missing,
-                        Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                        Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                        Type.Missing);                    
                     excel.SheetsInNewWorkbook = 1;
                     excel.Workbooks.Add(Type.Missing);
                     excel.Workbooks[1].SaveAs(model.FileName, XlFileFormat.xlExcel8, Type.Missing,
                         Type.Missing, false, false, XlSaveAsAccessMode.xlNoChange, Type.Missing,
-                        Type.Missing, Type.Missing, Type.Missing, Type.Missing);                    
+                        Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+
+                    excel.Workbooks.Open(model.FileName, Type.Missing, Type.Missing, Type.Missing,
+                        Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                        Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                        Type.Missing);                    
                     Sheets excelsheets = excel.Workbooks[1].Worksheets;
                     var excelworksheet = (Worksheet)excelsheets.get_Item(1);
                     excelworksheet.Cells.Clear();
@@ -331,7 +331,7 @@ namespace ClinicImplementation.Implementations
                             }
                             else
                             {
-                                excelcells.Value2 = el.Date.ToShortDateString();
+                                excelcells.Value2 = el.Date.ToString("dd/MM/yyyy HH:mm");
                             }                            
                             excelcells = excelcells.get_Offset(0, 1);
 
@@ -424,7 +424,7 @@ namespace ClinicImplementation.Implementations
                         }
                         else
                         {
-                            table.Cell(i + 2, 2).Range.Text = list[i].Date.ToShortDateString();
+                            table.Cell(i + 2, 2).Range.Text = list[i].Date.ToString("dd/MM/yyyy HH:mm"); 
                         }                        
                         table.Cell(i + 2, 3).Range.Text = list[i].FIO;
                         table.Cell(i + 2, 4).Range.Text = list[i].MedicationName;
