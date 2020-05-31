@@ -1,4 +1,6 @@
 ﻿using ClinicBusinessLogic.BindingModels;
+using ClinicBusinessLogic.BusinessLogic;
+using ClinicBusinessLogic.HelperModels;
 using ClinicBusinessLogic.Interfaces;
 using ClinicImplementation.Implementations;
 using Microsoft.Reporting.WebForms;
@@ -39,9 +41,16 @@ namespace ClinicClientView
                 {
                     FileName = path,
                     DateFrom = Calendar1.SelectedDate,
-                    DateTo = Calendar2.SelectedDate
+                    DateTo = Calendar2.SelectedDate.AddDays(1)
                 }, Convert.ToInt32(Session["PatientId"]));
-                File.Copy(path, @"C:\tempFolderForTpLabs\ClinicTermWork\ClinicClientView\Treatments.pdf", true);
+                MailLogic.SendMail(new MailSendInfo
+                {
+                    Email = Session["PatientEmail"].ToString(),
+                    Subject = "Лечения пациента",
+                    Body = " ",
+                    AttachmentPath = path
+                });
+               // File.Copy(path, @"C:\tempFolderForTpLabs\ClinicTermWork\ClinicClientView\Treatments.pdf", true);
                 Page.ClientScript.RegisterStartupScript(GetType(), "ScriptUpdate",  @"<script language = ""javascript"" type = ""text/javascript"" > getElementById('reportArea').contentDocument.location.reload() </ script >");
                 Debug.WriteLine("UPDATE DONE!!!" + Calendar1.SelectedDate + Calendar2.SelectedDate);
                 reportObject.Visible = true;

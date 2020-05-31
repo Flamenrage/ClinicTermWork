@@ -473,7 +473,7 @@ namespace ClinicImplementation.Implementations
                         doc.Add(paragraph);
 
                         var timePeriod = new Phrase("c " + model.DateFrom.Value.ToShortDateString() +
-                                                      " по " + model.DateTo.Value.ToShortDateString(),
+                                                      " до " + model.DateTo.Value.ToShortDateString(),
                                                       new iTextSharp.text.Font(baseFont, 14, iTextSharp.text.Font.BOLD));
 
                         paragraph = new iTextSharp.text.Paragraph(timePeriod)

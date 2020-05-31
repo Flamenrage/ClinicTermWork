@@ -1,6 +1,7 @@
 ﻿using ClinicBusinessLogic.HelperModels;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
@@ -23,19 +24,6 @@ namespace ClinicBusinessLogic.BusinessLogic
         }
         public static async void SendMail(MailSendInfo info)
         {
-            if (string.IsNullOrEmpty(smtpClientHost) || smtpClientPort == 0)
-            {
-                return;
-            }
-            if (string.IsNullOrEmpty(mailLogin) || string.IsNullOrEmpty(mailPassword))
-            {
-                return;
-            }
-            if (string.IsNullOrEmpty(info.Email) || string.IsNullOrEmpty(info.Subject) ||
-                string.IsNullOrEmpty(info.Body))
-            {
-                return;
-            }
             using (var objMailMessage = new MailMessage())
             {
                 using (var objSmtpClient = new SmtpClient(smtpClientHost, smtpClientPort))
@@ -54,6 +42,7 @@ namespace ClinicBusinessLogic.BusinessLogic
                         objSmtpClient.Credentials = new NetworkCredential(mailLogin, mailPassword);
                         objMailMessage.Attachments.Add(new Attachment(info.AttachmentPath));
                         await Task.Run(() => objSmtpClient.Send(objMailMessage));
+                        Debug.WriteLine("Письмо отправлено клиенту");
                     }
                     catch (Exception)
                     {

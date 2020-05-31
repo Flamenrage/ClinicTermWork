@@ -27,16 +27,19 @@ namespace ClinicClientView.App_Start
           });
         public static IUnityContainer Container => container.Value;
         #endregion
-        public static void RegisterTypes(IUnityContainer container)
+        public static void ConfigurateMail()
         {
             MailLogic.MailConfig(new ClinicBusinessLogic.HelperModels.MailConfig
             {
                 SmtpClientHost = WebConfigurationManager.AppSettings["SmtpClientHost"],
                 SmtpClientPort = Convert.ToInt32(
-                    WebConfigurationManager.AppSettings["SmtpClientPort"]),
+                               WebConfigurationManager.AppSettings["SmtpClientPort"]),
                 MailLogin = WebConfigurationManager.AppSettings["MailLogin"],
                 MailPassword = WebConfigurationManager.AppSettings["MailPassword"],
             });
+        }
+        public static void RegisterTypes(IUnityContainer container)
+        {
             container.RegisterType<DbContext, DatabaseContext>(
                 new HierarchicalLifetimeManager());
             container.RegisterType<IPatientLogic, PatientLogic>(

@@ -18,6 +18,7 @@ namespace ClinicClientView
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            UnityConfig.ConfigurateMail();
             logic = new PatientLogic();
         }
 

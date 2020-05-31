@@ -1,5 +1,6 @@
 ﻿using ClinicBusinessLogic.BindingModels;
 using ClinicBusinessLogic.BusinessLogic;
+using ClinicBusinessLogic.HelperModels;
 using ClinicBusinessLogic.Interfaces;
 using ClinicBusinessLogic.ViewModels;
 using ClinicImplementation.Implementations;
@@ -82,12 +83,13 @@ namespace ClinicClientView
             {
                 DateTime date = logic.TreatmentReservation(list[dataGridView.SelectedIndex].Id);
                 string name;
+                string path = null;
                 if (!string.IsNullOrEmpty(textBoxReport.Text)) 
                 {
                     name = textBoxReport.Text;
                     if (name == "xls")
                     {
-                        string path = @"C:\temp\PatientTreatment.xls";
+                        path = @"C:\temp\PatientTreatment.xls";
                         logicR.SaveToExcel(new ReportBindingModel
                         {
                             FileName = path,
@@ -97,7 +99,7 @@ namespace ClinicClientView
                     }
                     else if (name == "doc")
                     {
-                        string path = @"C:\temp\PatientTreatment.doc";
+                        path = @"C:\temp\PatientTreatment.doc";
                         logicR.SaveToWord(new ReportBindingModel
                         {
                             FileName = path,
@@ -106,6 +108,13 @@ namespace ClinicClientView
                         }, Convert.ToInt32(Session["PatientId"]));
                     }
                 }
+                MailLogic.SendMail(new MailSendInfo
+                {
+                    Email = Session["PatientEmail"].ToString(),
+                    Subject = "Лечение зарезервировано",
+                    Body = " ",
+                    AttachmentPath = path
+                });
                 LoadData();
                 Response.Redirect("FormMain.aspx");
             }
