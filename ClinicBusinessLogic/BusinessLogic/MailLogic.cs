@@ -22,7 +22,7 @@ namespace ClinicBusinessLogic.BusinessLogic
             mailLogin = config.MailLogin;
             mailPassword = config.MailPassword;
         }
-        public static async void SendMail(MailSendInfo info)
+        public static async Task SendMail(MailSendInfo info)
         {
             using (var objMailMessage = new MailMessage())
             {
@@ -41,8 +41,7 @@ namespace ClinicBusinessLogic.BusinessLogic
                         objSmtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                         objSmtpClient.Credentials = new NetworkCredential(mailLogin, mailPassword);
                         objMailMessage.Attachments.Add(new Attachment(info.AttachmentPath));
-                        await Task.Run(() => objSmtpClient.Send(objMailMessage));
-                        Debug.WriteLine("Письмо отправлено клиенту");
+                        await Task.Run(() => { objSmtpClient.Send(objMailMessage); return 0;});
                     }
                     catch (Exception)
                     {
