@@ -10,6 +10,8 @@ using ClinicImplementation.Implementations;
 using Unity.Lifetime;
 //using System.Data.Entity;
 using Microsoft.EntityFrameworkCore;
+using ClinicBusinessLogic.BusinessLogic;
+using System.Web.Configuration;
 
 namespace ClinicClientView.App_Start
 {
@@ -27,7 +29,14 @@ namespace ClinicClientView.App_Start
         #endregion
         public static void RegisterTypes(IUnityContainer container)
         {
-            
+            MailLogic.MailConfig(new ClinicBusinessLogic.HelperModels.MailConfig
+            {
+                SmtpClientHost = WebConfigurationManager.AppSettings["SmtpClientHost"],
+                SmtpClientPort = Convert.ToInt32(
+                    WebConfigurationManager.AppSettings["SmtpClientPort"]),
+                MailLogin = WebConfigurationManager.AppSettings["MailLogin"],
+                MailPassword = WebConfigurationManager.AppSettings["MailPassword"],
+            });
             container.RegisterType<DbContext, DatabaseContext>(
                 new HierarchicalLifetimeManager());
             container.RegisterType<IPatientLogic, PatientLogic>(

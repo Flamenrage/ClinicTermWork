@@ -1,9 +1,11 @@
 ﻿using ClinicBusinessLogic.BindingModels;
+using ClinicBusinessLogic.BusinessLogic;
 using ClinicBusinessLogic.Interfaces;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -72,6 +74,13 @@ namespace ClinicAdministrationView
                     FileName = path,
                     DateFrom = dateTimePickerFrom.Value,
                     DateTo = dateTimePickerTo.Value
+                });
+                MailLogic.SendMail(new ClinicBusinessLogic.HelperModels.MailSendInfo
+                {
+                    Email = ConfigurationManager.AppSettings["AdminEmail"],
+                    Subject = "Отчёт по заявкам и лечениям",
+                    Body = " ",
+                    AttachmentPath = path
                 });
             }
             catch (Exception ex)

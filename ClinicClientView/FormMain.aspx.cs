@@ -1,4 +1,5 @@
 ﻿using ClinicBusinessLogic.BindingModels;
+using ClinicBusinessLogic.BusinessLogic;
 using ClinicBusinessLogic.Interfaces;
 using ClinicBusinessLogic.ViewModels;
 using ClinicImplementation.Implementations;

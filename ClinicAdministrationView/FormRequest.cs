@@ -1,9 +1,11 @@
 ﻿using ClinicBusinessLogic.BindingModels;
+using ClinicBusinessLogic.BusinessLogic;
 using ClinicBusinessLogic.Interfaces;
 using ClinicBusinessLogic.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -97,6 +99,13 @@ namespace ClinicAdministrationView
                     DateFrom = date,
                     DateTo = date.AddMilliseconds(100)
                 }, -1);
+                MailLogic.SendMail(new ClinicBusinessLogic.HelperModels.MailSendInfo
+                {
+                    Email = ConfigurationManager.AppSettings["AdminEmail"],
+                    Subject = "Оповещение по заявке",
+                    Body = "Заявка выполнена",
+                    AttachmentPath = path
+                });
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;

@@ -1,11 +1,15 @@
 ﻿using ClinicBusinessLogic.BindingModels;
+using ClinicBusinessLogic.BusinessLogic;
+using ClinicBusinessLogic.HelperModels;
 using ClinicBusinessLogic.Interfaces;
 using ClinicImplementation;
 using ClinicImplementation.Implementations;
 using ClinicImplementation.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Protocols;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,6 +28,13 @@ namespace ClinicAdministrationView
         static void Main()
         {
             var container = BuildUnityContainer();
+            MailLogic.MailConfig(new MailConfig
+            {
+                SmtpClientHost = ConfigurationManager.AppSettings["SmtpClientHost"],
+                SmtpClientPort = Convert.ToInt32(ConfigurationManager.AppSettings["SmtpClientPort"]),
+                MailLogin = ConfigurationManager.AppSettings["MailLogin"],
+                MailPassword = ConfigurationManager.AppSettings["MailPassword"],
+            });
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);            
             Application.Run(container.Resolve<FormAuthorization>());
