@@ -449,7 +449,7 @@ namespace ClinicImplementation.Implementations
         {
             using (var context = new DatabaseContext())
             {
-                using (FileStream fs = new FileStream(model.FileName, FileMode.OpenOrCreate, FileAccess.Write))
+                using (FileStream fs = new FileStream(model.FileName, FileMode.Create, FileAccess.Write))
                 {
                     //создаем документ, задаем границы, связываем документ и поток
                     iTextSharp.text.Document doc = new iTextSharp.text.Document();

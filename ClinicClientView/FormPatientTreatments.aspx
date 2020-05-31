@@ -40,7 +40,7 @@
             </asp:ScriptManager>
             <br />
             <div id ='reportObject' runat = "server">
-                <object type="application/pdf" data="Treatments.pdf" width="1300" height="600"></object>
+                <iframe id = "reportArea" src = "Treatments.pdf" width="1300" height="600"/>
             </div>
         </div>
     </form>

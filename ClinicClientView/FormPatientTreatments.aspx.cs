@@ -4,6 +4,8 @@ using ClinicImplementation.Implementations;
 using Microsoft.Reporting.WebForms;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -32,14 +34,16 @@ namespace ClinicClientView
             }
             try
             {                
-                string path = "Treatments.pdf";
+                string path = @"C:\Program Files (x86)\IIS Express\Treatments.pdf";
                 logicR.SaveTreatments(new ReportBindingModel
                 {
                     FileName = path,
                     DateFrom = Calendar1.SelectedDate,
                     DateTo = Calendar2.SelectedDate
                 }, Convert.ToInt32(Session["PatientId"]));
-                Page.ClientScript.RegisterStartupScript(GetType(), "ScriptUpdate",  @"<script language = ""javascript"" type = ""text/javascript"" > getElementById('reportObject').contentDocument.location.reload() </ script >");
+                File.Copy(path, @"C:\tempFolderForTpLabs\ClinicTermWork\ClinicClientView\Treatments.pdf", true);
+                Page.ClientScript.RegisterStartupScript(GetType(), "ScriptUpdate",  @"<script language = ""javascript"" type = ""text/javascript"" > getElementById('reportArea').contentDocument.location.reload() </ script >");
+                Debug.WriteLine("UPDATE DONE!!!" + Calendar1.SelectedDate + Calendar2.SelectedDate);
                 reportObject.Visible = true;
             }
             catch (Exception ex)
