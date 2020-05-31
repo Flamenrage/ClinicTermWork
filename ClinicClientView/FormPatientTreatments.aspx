@@ -39,9 +39,15 @@
             <asp:ScriptManager ID="ScriptManager1" runat="server">
             </asp:ScriptManager>
             <br />
-            <div id ='reportObject' runat = "server">
-                <iframe id = "reportArea" src = "Treatments.pdf" width="1300" height="600"/>
-            </div>
+            <asp:GridView ID="dataGridView" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True">
+                 <Columns>
+                    <asp:BoundField DataField="Date" HeaderText="Дата" SortExpression="Date" />
+                    <asp:BoundField DataField="Name" HeaderText="Имя" SortExpression="Name" />
+                    <asp:BoundField DataField="MedicationName" HeaderText="Название лекарства" SortExpression="MedicationName"/>
+                    <asp:BoundField DataField="Count" HeaderText="Количество" SortExpression="Count" />
+                </Columns>
+                <SelectedRowStyle BackColor="#CCCCCC" />
+            </asp:GridView>
         </div>
     </form>
 </body>

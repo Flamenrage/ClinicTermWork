@@ -2,6 +2,7 @@
 using ClinicBusinessLogic.BusinessLogic;
 using ClinicBusinessLogic.HelperModels;
 using ClinicBusinessLogic.Interfaces;
+using ClinicBusinessLogic.ViewModels;
 using ClinicImplementation.Implementations;
 using Microsoft.Reporting.WebForms;
 using System;
@@ -22,10 +23,7 @@ namespace ClinicClientView
 
         private readonly IMainLogic logic = new MainLogic();
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            reportObject.Visible = false;
-        }
+        protected void Page_Load(object sender, EventArgs e) { }
 
         protected void ButtonMake_Click(object sender, EventArgs e)
         {
@@ -50,17 +48,35 @@ namespace ClinicClientView
                     Body = " ",
                     AttachmentPath = path
                 });
-               // File.Copy(path, @"C:\tempFolderForTpLabs\ClinicTermWork\ClinicClientView\Treatments.pdf", true);
-                Page.ClientScript.RegisterStartupScript(GetType(), "ScriptUpdate",  @"<script language = ""javascript"" type = ""text/javascript"" > getElementById('reportArea').contentDocument.location.reload() </ script >");
-                Debug.WriteLine("UPDATE DONE!!!" + Calendar1.SelectedDate + Calendar2.SelectedDate);
-                reportObject.Visible = true;
+                var list = logicR.GetTreatments(new ReportBindingModel
+                {
+                    FileName = path,
+                    DateFrom = Calendar1.SelectedDate,
+                    DateTo = Calendar2.SelectedDate.AddDays(1)
+
+                }, Convert.ToInt32(Session["PatientId"]))
+                .Select(rec => new
+                {
+                    FIO = rec.FIO,
+                    MedicationName = rec.MedicationName,
+                    Count = rec.Count,
+                    Name = rec.Name,
+                    Date = (rec.Date == DateTime.MinValue) ? " " : rec.Date.ToString("dd/MM/yyyy HH:mm")
+                });
+                if (list != null)
+                {
+                    dataGridView.DataBind();
+                    dataGridView.DataSource = list;
+                    dataGridView.DataBind();
+                    dataGridView.ShowHeaderWhenEmpty = true;
+                }
             }
             catch (Exception ex)
             {
                 Page.ClientScript.RegisterStartupScript(GetType(), "ScriptAlert", "<script>alert('" + ex.Message + "');</script>");
             }
         }
-
+        
         protected void ButtonCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("FormMain.aspx");
