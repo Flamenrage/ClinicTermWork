@@ -50,5 +50,36 @@ namespace ClinicBusinessLogic.BusinessLogic
                 }
             }
         }
+        public static async Task SendMailBackUp(MailSendInfo info, string[] attachPaths)
+        {
+            using (var objMailMessage = new MailMessage())
+            {
+                using (var objSmtpClient = new SmtpClient(smtpClientHost, smtpClientPort))
+                {
+                    try
+                    {
+                        objMailMessage.From = new MailAddress(mailLogin);
+                        objMailMessage.To.Add(new MailAddress(info.Email));
+                        objMailMessage.Subject = info.Subject;
+                        objMailMessage.Body = info.Body;
+                        objMailMessage.SubjectEncoding = Encoding.UTF8;
+                        objMailMessage.BodyEncoding = Encoding.UTF8;
+                        objSmtpClient.UseDefaultCredentials = false;
+                        objSmtpClient.EnableSsl = true;
+                        objSmtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                        objSmtpClient.Credentials = new NetworkCredential(mailLogin, mailPassword);
+                        foreach (var el in attachPaths)
+                        {
+                            objMailMessage.Attachments.Add(new Attachment(el));
+                        }
+                        await Task.Run(() => { objSmtpClient.Send(objMailMessage); return 0; });
+                    }
+                    catch (Exception)
+                    {
+                        throw;
+                    }
+                }
+            }
+        }
     }
 }
