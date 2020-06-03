@@ -36,6 +36,9 @@
             this.отчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonCreateRequest = new System.Windows.Forms.Button();
             this.dataGridViewT = new System.Windows.Forms.DataGridView();
+            this.бэкапToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьВXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьВJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewM)).BeginInit();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewT)).BeginInit();
@@ -69,7 +72,8 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.рецептыToolStripMenuItem,
             this.лекарстваToolStripMenuItem,
-            this.отчетToolStripMenuItem});
+            this.отчетToolStripMenuItem,
+            this.бэкапToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(755, 24);
@@ -120,6 +124,29 @@
             this.dataGridViewT.Size = new System.Drawing.Size(587, 159);
             this.dataGridViewT.TabIndex = 11;
             // 
+            // бэкапToolStripMenuItem
+            // 
+            this.бэкапToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сохранитьВXMLToolStripMenuItem,
+            this.сохранитьВJSONToolStripMenuItem});
+            this.бэкапToolStripMenuItem.Name = "бэкапToolStripMenuItem";
+            this.бэкапToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.бэкапToolStripMenuItem.Text = "Бэкап";
+            // 
+            // сохранитьВXMLToolStripMenuItem
+            // 
+            this.сохранитьВXMLToolStripMenuItem.Name = "сохранитьВXMLToolStripMenuItem";
+            this.сохранитьВXMLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьВXMLToolStripMenuItem.Text = "Сохранить в XML";
+            this.сохранитьВXMLToolStripMenuItem.Click += new System.EventHandler(this.SaveToXmlToolStripMenuItem_Click);
+            // 
+            // сохранитьВJSONToolStripMenuItem
+            // 
+            this.сохранитьВJSONToolStripMenuItem.Name = "сохранитьВJSONToolStripMenuItem";
+            this.сохранитьВJSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьВJSONToolStripMenuItem.Text = "Сохранить в JSON";
+            this.сохранитьВJSONToolStripMenuItem.Click += new System.EventHandler(this.SaveToJsonToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,5 +182,8 @@
         private System.Windows.Forms.ToolStripMenuItem отчетToolStripMenuItem;
         private System.Windows.Forms.Button buttonCreateRequest;
         private System.Windows.Forms.DataGridView dataGridViewT;
+        private System.Windows.Forms.ToolStripMenuItem бэкапToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьВXMLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьВJSONToolStripMenuItem;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using ClinicBusinessLogic.Interfaces;
 using ClinicBusinessLogic.ViewModels;
+using ClinicImplementation.Implementations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -93,6 +94,36 @@ namespace ClinicAdministrationView
         private void FormMainAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void SaveToXmlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BackUpLogic.AdminBackUpXML();
+                MessageBox.Show("Успешно сохранено в XML", "Готово", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ошибка при сохранении в XML", "Ошибка", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void SaveToJsonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BackUpLogic.AdminBackUpJSON();
+                MessageBox.Show("Успешно сохранено в JSON", "Готово", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ошибка при сохранении в JSON", "Ошибка", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
     }
 }
