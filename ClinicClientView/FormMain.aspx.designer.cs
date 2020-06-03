@@ -87,6 +87,24 @@ namespace ClinicClientView
         protected global::System.Web.UI.WebControls.Button ButtonRef;
 
         /// <summary>
+        /// ButtonXML элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonXML;
+
+        /// <summary>
+        /// ButtonJSON элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonJSON;
+
+        /// <summary>
         /// dataGridView элемент управления.
         /// </summary>
         /// <remarks>

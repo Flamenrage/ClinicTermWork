@@ -29,7 +29,9 @@
         <asp:Button ID="ButtonCreateTreatment" runat="server" Text="Выбрать лечение" OnClick="ButtonCreateTreatment_Click" />
         <asp:Button ID="ButtonReviewTreatment" runat="server" Text="Просмотреть лечение" OnClick="ButtonReviewTreatment_Click" />
         <asp:Button ID="ButtonRef" runat="server" Text="Обновить список" OnClick="ButtonRef_Click" Width="177px" />
-        <asp:GridView ID="dataGridView" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True">
+        <asp:Button ID="ButtonXML" runat="server" Text="Бэкап XML" OnClick="ButtonXML_Click" />
+        <asp:Button ID="ButtonJSON" runat="server" Text="Бэкап JSON" OnClick="ButtonJSON_Click" />
+        <asp:GridView ID="dataGridView" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" Width="1092px">
             <Columns>
                 <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
                 <asp:CommandField ShowSelectButton="true" SelectText=">>" />

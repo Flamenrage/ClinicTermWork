@@ -108,7 +108,7 @@ namespace ClinicClientView
                         }, Convert.ToInt32(Session["PatientId"]));
                     }
                 }
-                MailLogic.SendMail(new MailSendInfo
+                _ = MailLogic.SendMail(new MailSendInfo
                 {
                     Email = Session["PatientEmail"].ToString(),
                     Subject = "Лечение зарезервировано",
@@ -122,6 +122,32 @@ namespace ClinicClientView
             {
                 Page.ClientScript.RegisterStartupScript(GetType(), "Scripts", "<script>alert('" + ex.Message + "');</script>");
             }
+        }
+        protected void ButtonXML_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BackUpLogic.PatientBackUpXML(Convert.ToInt32(Session["PatientId"]));
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Успешно сохранено');</script>");
+            }
+            catch (Exception ex)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('" + ex.Message + "');</script>");
+            }
+
+        }
+        protected void ButtonJSON_Click(object sender, EventArgs e) 
+        {
+            try
+            {
+                BackUpLogic.PatientBackUpJSON(Convert.ToInt32(Session["PatientId"]));
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Успешно сохранено');</script>");
+            }
+            catch (Exception ex)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('" + ex.Message + "');</script>");
+            }
+
         }
         protected void ButtonRef_Click(object sender, EventArgs e)
         {
