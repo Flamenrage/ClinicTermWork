@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -42,13 +43,15 @@ namespace ClinicAdministrationView
         {
             try
             {
-                List<MedicationViewModel> listM = logicM.GetMostList();
+                List<MedicationViewModel> listM = logicM.GetMostList(false);
                 if (listM != null)
                 {
                     comboBoxMedication.DisplayMember = "Name";
                     comboBoxMedication.ValueMember = "Id";
                     comboBoxMedication.DataSource = listM;
                     comboBoxMedication.SelectedItem = null;
+                    foreach (var el in listM)
+                        Debug.WriteLine(el.Id.ToString() + " " + el.Name + " " + el.Price + " " + el.Count);
                 }
             }
             catch (Exception ex)

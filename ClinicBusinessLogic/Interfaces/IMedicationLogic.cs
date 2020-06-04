@@ -10,7 +10,7 @@ namespace ClinicBusinessLogic.Interfaces
     {
         List<MedicationViewModel> GetList();
 
-        List<MedicationViewModel> GetMostList();
+        List<MedicationViewModel> GetMostList(bool isForDiagram);
 
         MedicationViewModel GetElement(int id);
 

@@ -84,7 +84,7 @@ namespace ClinicImplementation.Implementations
             }
         }
 
-        public List<MedicationViewModel> GetMostList()
+        public List<MedicationViewModel> GetMostList(bool isForDiagram)
         {
             using (var context = new DatabaseContext())
             {
@@ -121,8 +121,21 @@ namespace ClinicImplementation.Implementations
                                         })
                                         .OrderByDescending(rec => rec.Count)
                                         .ToList();
+                if (isForDiagram) //если нужно построить график
+                {
+                    List<MedicationViewModel> res = new List<MedicationViewModel>();
+                    foreach (var el in groupMed) 
+                    {
+                        res.Add(new MedicationViewModel
+                        {
+                            Name = el.MedicationName,
+                            Count = el.Count
+                        });
+                    }
+                    return res;
+                }
 
-                List<MedicationViewModel> result = new List<MedicationViewModel>();
+                    List<MedicationViewModel> result = new List<MedicationViewModel>();
                 foreach (var med in groupMed)
                 {
                     // из лекарств выбираем те, которые есть в группировке лекарств
@@ -158,7 +171,6 @@ namespace ClinicImplementation.Implementations
                         });
                     }
                 }
-
                 return result;
             }
         }

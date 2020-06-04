@@ -176,6 +176,7 @@
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Thread" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -240,6 +241,7 @@
   <ItemGroup>
     <Content Include="FormAuthorization.aspx" />
     <Content Include="FormCreateTreatment.aspx" />
+    <Content Include="FormDiagram.aspx" />
     <Content Include="FormMain.aspx" />
     <Content Include="FormPatientTreatments.aspx" />
     <Content Include="FormPrescriptions.aspx" />
@@ -275,6 +277,13 @@
     </Compile>
     <Compile Include="FormCreateTreatment.aspx.designer.cs">
       <DependentUpon>FormCreateTreatment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormDiagram.aspx.cs">
+      <DependentUpon>FormDiagram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormDiagram.aspx.designer.cs">
+      <DependentUpon>FormDiagram.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormMain.aspx.cs">
       <DependentUpon>FormMain.aspx</DependentUpon>

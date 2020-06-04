@@ -20,6 +20,7 @@
             <Items>
                 <asp:MenuItem Text="Каталог рецептов" Value="Каталог рецептов" NavigateUrl="~/FormPrescriptions.aspx"></asp:MenuItem>
                 <asp:MenuItem Text="Отчеты" Value="Отчеты" NavigateUrl="~/FormPatientTreatments.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Диаграмма" Value="Диаграмма" NavigateUrl="~/FormDiagram.aspx"></asp:MenuItem>
             </Items>
         </asp:Menu>
         <asp:Label ID="LabelName" runat="server" Text="Введите формат: doc или xls" style="text-align: center"></asp:Label>
