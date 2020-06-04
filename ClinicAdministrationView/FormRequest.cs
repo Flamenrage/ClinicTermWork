@@ -50,8 +50,6 @@ namespace ClinicAdministrationView
                     comboBoxMedication.ValueMember = "Id";
                     comboBoxMedication.DataSource = listM;
                     comboBoxMedication.SelectedItem = null;
-                    foreach (var el in listM)
-                        Debug.WriteLine(el.Id.ToString() + " " + el.Name + " " + el.Price + " " + el.Count);
                 }
             }
             catch (Exception ex)

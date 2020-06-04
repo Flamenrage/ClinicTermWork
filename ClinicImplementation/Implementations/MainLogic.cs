@@ -312,6 +312,7 @@ namespace ClinicImplementation.Implementations
                     }
                     catch (Exception)
                     {
+                        context.Treatments.FirstOrDefault(rec => rec.Id == id).IsReserved = false;
                         transaction.Rollback();
                         throw;
                     }

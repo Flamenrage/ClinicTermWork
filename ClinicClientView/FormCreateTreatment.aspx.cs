@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 
 namespace ClinicClientView
 {
-    public partial class FormCreateTreatment : System.Web.UI.Page
+    public partial class FormCreateTreatment : Page
     {
         private readonly IMainLogic logic = new MainLogic();
 
@@ -52,7 +52,7 @@ namespace ClinicClientView
             }
             else
             {
-                this.TreatmentPrescriptions = new List<TreatmentPrescriptionViewModel>();
+                TreatmentPrescriptions = new List<TreatmentPrescriptionViewModel>();
 
             }
             if (Session["SEId"] != null)
@@ -123,16 +123,23 @@ namespace ClinicClientView
                 }
                 else
                 {
-                    logic.CreateTreatment(new TreatmentBindingModel
+                    try
                     {
-                        PatientId = Int32.Parse(Session["PatientId"].ToString()),
-                        Name = name,
-                        TotalPrice = price,
-                        IsReserved = false,
-                        TreatmentPrescriptions = TreatmentPrescriptionBM
-                    });
-                    Session["id"] = logic.GetList().Last().Id.ToString();
-                    Session["Change"] = "0";
+                        logic.CreateTreatment(new TreatmentBindingModel
+                        {
+                            PatientId = int.Parse(Session["PatientId"].ToString()),
+                            Name = name,
+                            TotalPrice = price,
+                            IsReserved = false,
+                            TreatmentPrescriptions = TreatmentPrescriptionBM
+                        });
+                        Session["id"] = logic.GetList().Last().Id.ToString();
+                        Session["Change"] = "0";
+                    }
+                    catch (Exception ex)
+                    {
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('" + ex.Message + "');</script>");
+                    }
                 }
             }
             LoadData();
