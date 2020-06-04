@@ -58,7 +58,7 @@ namespace ClinicAdministrationView
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -124,6 +124,12 @@ namespace ClinicAdministrationView
                 MessageBox.Show("Ошибка при сохранении в JSON", "Ошибка", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void диаграммаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormDiagram>();
+            form.ShowDialog();
         }
     }
 }

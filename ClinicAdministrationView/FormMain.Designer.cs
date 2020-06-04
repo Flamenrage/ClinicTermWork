@@ -34,11 +34,12 @@
             this.рецептыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.лекарстваToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonCreateRequest = new System.Windows.Forms.Button();
-            this.dataGridViewT = new System.Windows.Forms.DataGridView();
             this.бэкапToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьВXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьВJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonCreateRequest = new System.Windows.Forms.Button();
+            this.dataGridViewT = new System.Windows.Forms.DataGridView();
+            this.диаграммаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewM)).BeginInit();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewT)).BeginInit();
@@ -73,7 +74,8 @@
             this.рецептыToolStripMenuItem,
             this.лекарстваToolStripMenuItem,
             this.отчетToolStripMenuItem,
-            this.бэкапToolStripMenuItem});
+            this.бэкапToolStripMenuItem,
+            this.диаграммаToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(755, 24);
@@ -101,6 +103,29 @@
             this.отчетToolStripMenuItem.Text = "Отчет";
             this.отчетToolStripMenuItem.Click += new System.EventHandler(this.отчетToolStripMenuItem_Click);
             // 
+            // бэкапToolStripMenuItem
+            // 
+            this.бэкапToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сохранитьВXMLToolStripMenuItem,
+            this.сохранитьВJSONToolStripMenuItem});
+            this.бэкапToolStripMenuItem.Name = "бэкапToolStripMenuItem";
+            this.бэкапToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.бэкапToolStripMenuItem.Text = "Бэкап";
+            // 
+            // сохранитьВXMLToolStripMenuItem
+            // 
+            this.сохранитьВXMLToolStripMenuItem.Name = "сохранитьВXMLToolStripMenuItem";
+            this.сохранитьВXMLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьВXMLToolStripMenuItem.Text = "Сохранить в XML";
+            this.сохранитьВXMLToolStripMenuItem.Click += new System.EventHandler(this.SaveToXmlToolStripMenuItem_Click);
+            // 
+            // сохранитьВJSONToolStripMenuItem
+            // 
+            this.сохранитьВJSONToolStripMenuItem.Name = "сохранитьВJSONToolStripMenuItem";
+            this.сохранитьВJSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьВJSONToolStripMenuItem.Text = "Сохранить в JSON";
+            this.сохранитьВJSONToolStripMenuItem.Click += new System.EventHandler(this.SaveToJsonToolStripMenuItem_Click);
+            // 
             // buttonCreateRequest
             // 
             this.buttonCreateRequest.Location = new System.Drawing.Point(612, 27);
@@ -124,28 +149,12 @@
             this.dataGridViewT.Size = new System.Drawing.Size(587, 159);
             this.dataGridViewT.TabIndex = 11;
             // 
-            // бэкапToolStripMenuItem
+            // диаграммаToolStripMenuItem
             // 
-            this.бэкапToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сохранитьВXMLToolStripMenuItem,
-            this.сохранитьВJSONToolStripMenuItem});
-            this.бэкапToolStripMenuItem.Name = "бэкапToolStripMenuItem";
-            this.бэкапToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.бэкапToolStripMenuItem.Text = "Бэкап";
-            // 
-            // сохранитьВXMLToolStripMenuItem
-            // 
-            this.сохранитьВXMLToolStripMenuItem.Name = "сохранитьВXMLToolStripMenuItem";
-            this.сохранитьВXMLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.сохранитьВXMLToolStripMenuItem.Text = "Сохранить в XML";
-            this.сохранитьВXMLToolStripMenuItem.Click += new System.EventHandler(this.SaveToXmlToolStripMenuItem_Click);
-            // 
-            // сохранитьВJSONToolStripMenuItem
-            // 
-            this.сохранитьВJSONToolStripMenuItem.Name = "сохранитьВJSONToolStripMenuItem";
-            this.сохранитьВJSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.сохранитьВJSONToolStripMenuItem.Text = "Сохранить в JSON";
-            this.сохранитьВJSONToolStripMenuItem.Click += new System.EventHandler(this.SaveToJsonToolStripMenuItem_Click);
+            this.диаграммаToolStripMenuItem.Name = "диаграммаToolStripMenuItem";
+            this.диаграммаToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.диаграммаToolStripMenuItem.Text = "Диаграмма";
+            this.диаграммаToolStripMenuItem.Click += new System.EventHandler(this.диаграммаToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -185,5 +194,6 @@
         private System.Windows.Forms.ToolStripMenuItem бэкапToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитьВXMLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитьВJSONToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem диаграммаToolStripMenuItem;
     }
 }
