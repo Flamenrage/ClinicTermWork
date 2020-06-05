@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
-<body>
+<body style="background-color: #D0FFFF">
     <form id="form1" runat="server">
         <div>
             Название
@@ -26,7 +26,7 @@
                 <SelectedRowStyle BackColor="#CCCCCC" />
             </asp:GridView>
             <br />
-            <asp:Button ID="ButtonCancel" runat="server" Text="Вернуться" OnClick="ButtonCancel_Click" />
+            <asp:Button ID="ButtonCancel" runat="server" Text="Вернуться" OnClick="ButtonCancel_Click" BackColor="#33CCFF" />
         </div>
     </form>
 </body>

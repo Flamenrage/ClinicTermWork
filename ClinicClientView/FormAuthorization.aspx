@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
-<body>
+<body style="background-color: #D0FFFF">
      <form id="form1" runat="server">
         <div style="height: 241px">
 
@@ -22,8 +22,8 @@
         <asp:TextBox ID="textBoxPassword" runat="server" Height="16px" Width="280px">abc123</asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="RegistrationButton" runat="server" OnClick="RegistrationButton_Click" Text="Зарегистрироваться" />
-            <asp:Button ID="SignInButton" runat="server" OnClick="SignInButton_Click" Text="Войти" />
+            <asp:Button ID="RegistrationButton" runat="server" OnClick="RegistrationButton_Click" Text="Зарегистрироваться" BackColor="#33CCFF" />
+            <asp:Button ID="SignInButton" runat="server" OnClick="SignInButton_Click" Text="Войти" BackColor="#33CCFF" />
 
         </div>
     </form>

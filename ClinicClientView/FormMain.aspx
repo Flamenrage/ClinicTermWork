@@ -8,15 +8,15 @@
     <title></title>
     <style type="text/css">
         #form1 {
-            height: 595px;
-            width: 1155px;
+            height: 994px;
+            width: 2016px; 
         }
     </style>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
-<body>
+<body style="background-color: #D0FFFF">
     <form id="form1" runat="server">
-        <asp:Menu ID="Menu" runat="server" BackColor="White" ForeColor="Black" Height="150px">
+        <asp:Menu ID="Menu" runat="server" BackColor="#D0FFFF" ForeColor="Black" Height="150px">
             <Items>
                 <asp:MenuItem Text="Каталог рецептов" Value="Каталог рецептов" NavigateUrl="~/FormPrescriptions.aspx"></asp:MenuItem>
                 <asp:MenuItem Text="Отчеты" Value="Отчеты" NavigateUrl="~/FormPatientTreatments.aspx"></asp:MenuItem>
@@ -25,13 +25,14 @@
         </asp:Menu>
         <asp:Label ID="LabelName" runat="server" Text="Введите формат: doc или xls" style="text-align: center"></asp:Label>
         <br />
-        <asp:Button ID="ButtonReserve" runat="server" OnClick="ButtonReserve_Click" Text="Резерв лечения" Width="161px" />
+        <asp:Button ID="ButtonReserve" runat="server" OnClick="ButtonReserve_Click" Text="Резерв лечения" Width="161px" BackColor="#33CCFF" />
         <asp:TextBox ID="textBoxReport" runat="server" Width="79px"></asp:TextBox>
-        <asp:Button ID="ButtonCreateTreatment" runat="server" Text="Выбрать лечение" OnClick="ButtonCreateTreatment_Click" />
-        <asp:Button ID="ButtonReviewTreatment" runat="server" Text="Просмотреть лечение" OnClick="ButtonReviewTreatment_Click" />
-        <asp:Button ID="ButtonRef" runat="server" Text="Обновить список" OnClick="ButtonRef_Click" Width="177px" />
-        <asp:Button ID="ButtonXML" runat="server" Text="Бэкап XML" OnClick="ButtonXML_Click" />
-        <asp:Button ID="ButtonJSON" runat="server" Text="Бэкап JSON" OnClick="ButtonJSON_Click" />
+        <asp:Button ID="ButtonCreateTreatment" runat="server" Text="Выбрать лечение" OnClick="ButtonCreateTreatment_Click" BackColor="#33CCFF" />
+        <asp:Button ID="ButtonReviewTreatment" runat="server" Text="Просмотреть лечение" OnClick="ButtonReviewTreatment_Click" BackColor="#33CCFF" />
+        <asp:Button ID="ButtonRef" runat="server" Text="Обновить список" OnClick="ButtonRef_Click" Width="177px" BackColor="#33CCFF" />
+        <asp:Button ID="ButtonXML" runat="server" Text="Бэкап XML" OnClick="ButtonXML_Click" BackColor="#33CCFF" />
+        <asp:Button ID="ButtonJSON" runat="server" Text="Бэкап JSON" OnClick="ButtonJSON_Click" BackColor="#33CCFF" />
+        <br />
         <asp:GridView ID="dataGridView" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" Width="1092px">
             <Columns>
                 <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
@@ -43,6 +44,6 @@
             </Columns>
             <SelectedRowStyle BackColor="#CCCCCC" />
         </asp:GridView>
-    </form>
+      </form>
 </body>
 </html>

@@ -26,13 +26,12 @@ namespace ClinicClientView
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadDiagram();
         }
-        private void LoadDiagram()
+        protected void ButtonForm_Click(object sender, EventArgs e)
         {
             var list = logic.GetMostList(true);
-            ChartDiagram.BackColor = Color.Gray;
-            ChartDiagram.BackSecondaryColor = Color.WhiteSmoke;
+            ChartDiagram.BackColor = Color.FromArgb(150,255,255);
+            ChartDiagram.BackSecondaryColor = Color.FromArgb(208, 255, 255);
             ChartDiagram.BackGradientStyle = GradientStyle.DiagonalRight;
 
             ChartDiagram.BorderlineDashStyle = ChartDashStyle.Solid;
@@ -43,15 +42,8 @@ namespace ClinicClientView
             ChartDiagram.ChartAreas[0].BackColor = Color.Wheat;
 
             // Добавить и форматировать заголовок
-            ChartDiagram.Titles.Add("Актуальность лекарств"); 
+            ChartDiagram.Titles.Add("Актуальность лекарств");
             ChartDiagram.Titles[0].Font = new Font("Utopia", 16);
-            ChartDiagram.Series.Add(new Series("SplineSeries")
-            {
-                ChartType = SeriesChartType.Column,
-                BorderWidth = 3,
-                ShadowOffset = 2,
-                Color = Color.PaleVioletRed
-            });
             DataTable dt = new DataTable();
             dt.Columns.Add("X");
             dt.Columns.Add("Y");
@@ -61,10 +53,10 @@ namespace ClinicClientView
             }
 
             ChartDiagram.DataSource = dt;
-            ChartDiagram.Series["Series1"].XValueMember = "X";
-            ChartDiagram.Series["Series1"].YValueMembers = "Y";
+            ChartDiagram.Series["Series"].XValueMember = "X";
+            ChartDiagram.Series["Series"].YValueMembers = "Y";
             ChartDiagram.DataBind();
-            if (File.Exists(path)) 
+            if (File.Exists(path))
             {
                 File.Delete(path);
             }

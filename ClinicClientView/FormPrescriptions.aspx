@@ -7,10 +7,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
-<body>
+<body style="background-color: #D0FFFF">
     <form id="form1" runat="server">
         <div>
-            <asp:Button ID="ButtonRef" runat="server" Text="Обновить" OnClick="ButtonRef_Click" />
+            <asp:Button ID="ButtonRef" runat="server" Text="Обновить" OnClick="ButtonRef_Click" BackColor="#33CCFF" />
             <asp:GridView ID="dataGridView" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True">
                  <Columns>
                     <asp:BoundField DataField="Name" HeaderText="Наименование" SortExpression="Name" />
@@ -19,7 +19,7 @@
                 <SelectedRowStyle BackColor="#CCCCCC" />
             </asp:GridView>
             <br />
-            <asp:Button ID="ButtonCancel" runat="server" Text="Вернуться" OnClick="ButtonCancel_Click" />
+            <asp:Button ID="ButtonCancel" runat="server" Text="Вернуться" OnClick="ButtonCancel_Click" BackColor="#33CCFF" />
         </div>
     </form>
 </body>

@@ -9,20 +9,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
-<body style="height: 656px">
+<body style="height: 656px; background-color: #D0FFFF">
     <form id="form1" runat="server">
         <div>
         </div>
-        <asp:Button ID="ButtonReturn" runat="server" OnClick="ButtonReturn_Click" Text="Вернуться" />
-        <asp:Button ID="ButtonSendMail" runat="server" OnClick="ButtonSendMail_Click" Text="Отправить на почту" />
+        <asp:Button ID="ButtonReturn" runat="server" OnClick="ButtonReturn_Click" Text="Вернуться" BackColor="#33CCFF" />
+        <asp:Button ID="ButtonSendMail" runat="server" OnClick="ButtonSendMail_Click" Text="Отправить на почту" BackColor="#33CCFF" />
+        <asp:Button ID="ButtonForm" runat="server" OnClick="ButtonForm_Click" Text="Сформировать" BackColor="#33CCFF" />
         <div>
         <asp:Chart ID="ChartDiagram" runat="server" Height="496px" Width="575px">
             <series>
-                <asp:Series Name="Series1">
+                <asp:Series Name="Series">
                 </asp:Series>
             </series>
             <chartareas>
-                <asp:ChartArea Name="ChartArea1">
+                <asp:ChartArea Name="ChartArea">
                 </asp:ChartArea>
             </chartareas>
         </asp:Chart>
