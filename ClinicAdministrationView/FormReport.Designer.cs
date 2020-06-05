@@ -80,28 +80,31 @@
             // 
             // buttonForm
             // 
+            this.buttonForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.buttonForm.Location = new System.Drawing.Point(497, 12);
             this.buttonForm.Name = "buttonForm";
             this.buttonForm.Size = new System.Drawing.Size(145, 23);
             this.buttonForm.TabIndex = 5;
             this.buttonForm.Text = "Сформировать";
-            this.buttonForm.UseVisualStyleBackColor = true;
+            this.buttonForm.UseVisualStyleBackColor = false;
             this.buttonForm.Click += new System.EventHandler(this.buttonForm_Click);
             // 
             // buttonPdf
             // 
+            this.buttonPdf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.buttonPdf.Location = new System.Drawing.Point(649, 12);
             this.buttonPdf.Name = "buttonPdf";
             this.buttonPdf.Size = new System.Drawing.Size(139, 23);
             this.buttonPdf.TabIndex = 6;
             this.buttonPdf.Text = "В Pdf";
-            this.buttonPdf.UseVisualStyleBackColor = true;
+            this.buttonPdf.UseVisualStyleBackColor = false;
             this.buttonPdf.Click += new System.EventHandler(this.buttonPdf_Click);
             // 
             // FormReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonPdf);
             this.Controls.Add(this.buttonForm);

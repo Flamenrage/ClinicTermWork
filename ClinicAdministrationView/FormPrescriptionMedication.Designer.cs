@@ -40,75 +40,71 @@
             // 
             this.comboBoxMedication.DisplayMember = "IngredientName";
             this.comboBoxMedication.FormattingEnabled = true;
-            this.comboBoxMedication.Location = new System.Drawing.Point(112, 15);
-            this.comboBoxMedication.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxMedication.Location = new System.Drawing.Point(84, 12);
             this.comboBoxMedication.Name = "comboBoxMedication";
-            this.comboBoxMedication.Size = new System.Drawing.Size(355, 24);
+            this.comboBoxMedication.Size = new System.Drawing.Size(267, 21);
             this.comboBoxMedication.TabIndex = 18;
             this.comboBoxMedication.ValueMember = "Id";
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(357, 85);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
+            this.buttonCancel.Location = new System.Drawing.Point(268, 69);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(111, 27);
+            this.buttonCancel.Size = new System.Drawing.Size(83, 22);
             this.buttonCancel.TabIndex = 17;
             this.buttonCancel.Text = "Отмена";
-            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(239, 85);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
+            this.buttonSave.Location = new System.Drawing.Point(179, 69);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(111, 27);
+            this.buttonSave.Size = new System.Drawing.Size(83, 22);
             this.buttonSave.TabIndex = 16;
             this.buttonSave.Text = "Сохранить";
-            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // textBoxCount
             // 
-            this.textBoxCount.Location = new System.Drawing.Point(112, 53);
-            this.textBoxCount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCount.Location = new System.Drawing.Point(84, 43);
             this.textBoxCount.Name = "textBoxCount";
-            this.textBoxCount.Size = new System.Drawing.Size(355, 22);
+            this.textBoxCount.Size = new System.Drawing.Size(267, 20);
             this.textBoxCount.TabIndex = 15;
             // 
             // labelCount
             // 
             this.labelCount.AutoSize = true;
-            this.labelCount.Location = new System.Drawing.Point(12, 57);
-            this.labelCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCount.Location = new System.Drawing.Point(9, 46);
             this.labelCount.Name = "labelCount";
-            this.labelCount.Size = new System.Drawing.Size(90, 17);
+            this.labelCount.Size = new System.Drawing.Size(69, 13);
             this.labelCount.TabIndex = 14;
             this.labelCount.Text = "Количество:";
             // 
             // labelMedication
             // 
             this.labelMedication.AutoSize = true;
-            this.labelMedication.Location = new System.Drawing.Point(17, 18);
-            this.labelMedication.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMedication.Location = new System.Drawing.Point(13, 15);
             this.labelMedication.Name = "labelMedication";
-            this.labelMedication.Size = new System.Drawing.Size(82, 17);
+            this.labelMedication.Size = new System.Drawing.Size(65, 13);
             this.labelMedication.TabIndex = 13;
             this.labelMedication.Text = "Лекарство:";
             // 
             // FormPrescriptionMedication
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 119);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(358, 97);
             this.Controls.Add(this.comboBoxMedication);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.textBoxCount);
             this.Controls.Add(this.labelCount);
             this.Controls.Add(this.labelMedication);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormPrescriptionMedication";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Лекарство рецепта";

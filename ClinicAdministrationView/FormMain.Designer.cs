@@ -37,9 +37,9 @@
             this.бэкапToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьВXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьВJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.диаграммаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonCreateRequest = new System.Windows.Forms.Button();
             this.dataGridViewT = new System.Windows.Forms.DataGridView();
-            this.диаграммаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewM)).BeginInit();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewT)).BeginInit();
@@ -51,6 +51,7 @@
             this.dataGridViewM.AllowUserToDeleteRows = false;
             this.dataGridViewM.AllowUserToResizeColumns = false;
             this.dataGridViewM.AllowUserToResizeRows = false;
+            this.dataGridViewM.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGridViewM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewM.Location = new System.Drawing.Point(12, 27);
             this.dataGridViewM.Name = "dataGridViewM";
@@ -60,16 +61,18 @@
             // 
             // buttonRef
             // 
+            this.buttonRef.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.buttonRef.Location = new System.Drawing.Point(612, 65);
             this.buttonRef.Name = "buttonRef";
             this.buttonRef.Size = new System.Drawing.Size(131, 32);
             this.buttonRef.TabIndex = 7;
             this.buttonRef.Text = "Обновить список";
-            this.buttonRef.UseVisualStyleBackColor = true;
+            this.buttonRef.UseVisualStyleBackColor = false;
             this.buttonRef.Click += new System.EventHandler(this.buttonRef_Click);
             // 
             // menuStrip
             // 
+            this.menuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.рецептыToolStripMenuItem,
             this.лекарстваToolStripMenuItem,
@@ -84,6 +87,7 @@
             // 
             // рецептыToolStripMenuItem
             // 
+            this.рецептыToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.рецептыToolStripMenuItem.Name = "рецептыToolStripMenuItem";
             this.рецептыToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.рецептыToolStripMenuItem.Text = "Рецепты";
@@ -91,6 +95,7 @@
             // 
             // лекарстваToolStripMenuItem
             // 
+            this.лекарстваToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.лекарстваToolStripMenuItem.Name = "лекарстваToolStripMenuItem";
             this.лекарстваToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.лекарстваToolStripMenuItem.Text = "Лекарства";
@@ -98,6 +103,7 @@
             // 
             // отчетToolStripMenuItem
             // 
+            this.отчетToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.отчетToolStripMenuItem.Name = "отчетToolStripMenuItem";
             this.отчетToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.отчетToolStripMenuItem.Text = "Отчет";
@@ -105,6 +111,7 @@
             // 
             // бэкапToolStripMenuItem
             // 
+            this.бэкапToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.бэкапToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.сохранитьВXMLToolStripMenuItem,
             this.сохранитьВJSONToolStripMenuItem});
@@ -114,6 +121,7 @@
             // 
             // сохранитьВXMLToolStripMenuItem
             // 
+            this.сохранитьВXMLToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.сохранитьВXMLToolStripMenuItem.Name = "сохранитьВXMLToolStripMenuItem";
             this.сохранитьВXMLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.сохранитьВXMLToolStripMenuItem.Text = "Сохранить в XML";
@@ -121,19 +129,29 @@
             // 
             // сохранитьВJSONToolStripMenuItem
             // 
+            this.сохранитьВJSONToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.сохранитьВJSONToolStripMenuItem.Name = "сохранитьВJSONToolStripMenuItem";
             this.сохранитьВJSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.сохранитьВJSONToolStripMenuItem.Text = "Сохранить в JSON";
             this.сохранитьВJSONToolStripMenuItem.Click += new System.EventHandler(this.SaveToJsonToolStripMenuItem_Click);
             // 
+            // диаграммаToolStripMenuItem
+            // 
+            this.диаграммаToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
+            this.диаграммаToolStripMenuItem.Name = "диаграммаToolStripMenuItem";
+            this.диаграммаToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.диаграммаToolStripMenuItem.Text = "Диаграмма";
+            this.диаграммаToolStripMenuItem.Click += new System.EventHandler(this.диаграммаToolStripMenuItem_Click);
+            // 
             // buttonCreateRequest
             // 
+            this.buttonCreateRequest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.buttonCreateRequest.Location = new System.Drawing.Point(612, 27);
             this.buttonCreateRequest.Name = "buttonCreateRequest";
             this.buttonCreateRequest.Size = new System.Drawing.Size(131, 32);
             this.buttonCreateRequest.TabIndex = 9;
             this.buttonCreateRequest.Text = "Создать заявку";
-            this.buttonCreateRequest.UseVisualStyleBackColor = true;
+            this.buttonCreateRequest.UseVisualStyleBackColor = false;
             this.buttonCreateRequest.Click += new System.EventHandler(this.buttonCreateRequest_Click);
             // 
             // dataGridViewT
@@ -142,6 +160,7 @@
             this.dataGridViewT.AllowUserToDeleteRows = false;
             this.dataGridViewT.AllowUserToResizeColumns = false;
             this.dataGridViewT.AllowUserToResizeRows = false;
+            this.dataGridViewT.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGridViewT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewT.Location = new System.Drawing.Point(12, 198);
             this.dataGridViewT.Name = "dataGridViewT";
@@ -149,17 +168,11 @@
             this.dataGridViewT.Size = new System.Drawing.Size(587, 159);
             this.dataGridViewT.TabIndex = 11;
             // 
-            // диаграммаToolStripMenuItem
-            // 
-            this.диаграммаToolStripMenuItem.Name = "диаграммаToolStripMenuItem";
-            this.диаграммаToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.диаграммаToolStripMenuItem.Text = "Диаграмма";
-            this.диаграммаToolStripMenuItem.Click += new System.EventHandler(this.диаграммаToolStripMenuItem_Click);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(755, 369);
             this.Controls.Add(this.dataGridViewT);
             this.Controls.Add(this.buttonCreateRequest);

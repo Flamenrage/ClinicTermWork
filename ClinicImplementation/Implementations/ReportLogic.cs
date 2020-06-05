@@ -529,7 +529,7 @@ namespace ClinicImplementation.Implementations
                             }
                             else
                             {
-                                cell = new PdfPCell(new Phrase(el.Date.ToShortDateString(), fontForCells));
+                                cell = new PdfPCell(new Phrase(el.Date.ToString("dd/MM/yyyy HH:mm"), fontForCells));
                             }                            
                             table.AddCell(cell);
 

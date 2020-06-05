@@ -50,8 +50,8 @@ namespace ClinicAdministrationView
         private void FormDiagram_Load(object sender, EventArgs e)
         {
             var list = logic.GetMostList(true);
-            chart.BackColor = Color.Gray;
-            chart.BackSecondaryColor = Color.WhiteSmoke;
+            chart.BackColor = Color.FromArgb(150, 255, 255);
+            chart.BackSecondaryColor = Color.FromArgb(208, 255, 255);
             chart.BackGradientStyle = GradientStyle.DiagonalRight;
             chart.BorderlineDashStyle = ChartDashStyle.Solid;
             chart.BorderlineColor = Color.Gray;
@@ -62,13 +62,6 @@ namespace ClinicAdministrationView
             // Добавить и форматировать заголовок
             chart.Titles.Add("Актуальность лекарств"); 
             chart.Titles[0].Font = new Font("Utopia", 16);
-            chart.Series.Add(new Series("SplineSeries")
-            {
-                ChartType = SeriesChartType.Column,
-                BorderWidth = 3,
-                ShadowOffset = 2,
-                Color = Color.PaleVioletRed
-            });
             DataTable dt = new DataTable();
             dt.Columns.Add("X");
             dt.Columns.Add("Y");
@@ -77,8 +70,8 @@ namespace ClinicAdministrationView
                 dt.Rows.Add(el.Name, el.Count);
             }
             chart.DataSource = dt;
-            chart.Series["Series1"].XValueMember = "X";
-            chart.Series["Series1"].YValueMembers = "Y";
+            chart.Series["Series"].XValueMember = "X";
+            chart.Series["Series"].YValueMembers = "Y";
             chart.DataBind();
             if (File.Exists(path)) 
             {
